@@ -454,7 +454,7 @@ html::-webkit-scrollbar-thumb{
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 3rem 40rem;
+    padding: 3rem 300rem;
     top: 2rem;
 }
 .newsletter form{
