@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --main-color:#443;
+    --black: #1B1722;
+    --white : #F0F0F0;
+    --border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+    --border-radius-hover:4% 95% 6% 95%/95% 4% 92% 5%;
+    --border:.2rem solid var(--main-color);
+    --border-hover:.2rem dashed var(--main-color);
+    --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+*{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: all .2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background: var(--black);
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--black);
+    border-radius: 5rem;
+}
+.btn{
+    display: inline-block;
+    padding:.9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color:var(--main-color);
+    background: none;
+    border:var(--border);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+
+}
+.btn:hover{
+    background: var(--orange);
+    color: #fff;
+    border-radius: var(--border-radius-hover);
+    border:var(--border-hover);
+
+}
+
+.header{
+    top: 0;right: 0;left: 0;
+    background: url(Images/6k.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    padding: 1rem 7%;
+    z-index: 999;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+.header .logoContent{
+    display: flex;
+    align-items: center;
+}
+.header .logoContent .logo img{
+    height: 3.5rem;
+}
+.header .logoContent .logoName{
+    color: var(--main-color);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.header .navbar a{
+    font-size: 2rem;
+    margin-right: 3rem;
+    color: var(--main-color);
+    font-weight: bold;
+}
+.header .navbar a:hover{
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .4rem;
+}
+.header .icon i{
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: var(--main-color);
+    cursor: pointer;
+}
+.header .search{
+    display: none;
+    top: 100%;
+    margin: 1.5rem 7%;
+    background-color: transparent;
+    width: 50%;
+    right: 0;
+    height: 5rem;
+    position: absolute;
+}
+.header .search input{
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    background-color: var(--white);
+    color: var(--main-color);
+    margin-right: 7%;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: var(--box-shadow);
+}
+.header .search.active{
+    display: inline-block;
+}
+#menu-bar{
+    display: none;
+}
+.header .shopping-cart{
+    position: absolute;
+    top: 110%; right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+}
+.header .shopping-cart.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .shopping-cart .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.header .shopping-cart .box img{
+    height: 10rem;
+}
+.header .shopping-cart .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top: 50%; right: 2rem;
+    cursor: pointer;
+    color: var(--light-color);
+    transform: translateY(-50%);
+}
+.header .shopping-cart .box .fa-trash:hover{
+    color: var(--orange);
+}
+.header .shopping-cart .box .content h3{
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.header .shopping-cart .box .content span{
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+.header .shopping-cart .box .content .quantity{
+    padding-left: 1rem;
+}
+.header .shopping-cart .total{
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--black);
+}
+.header .shopping-cart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem;
+    
+}
+.header .login{
+    position: absolute;
+    top: 110%; right: -110%;
+    width: 35rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+.header .login.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .login h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+.header .login .box{
+    width: 100%;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+.header .login p{
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color:var(--light-color)
+}
+.header .login p a{
+    text-decoration: underline;
+}
+
+
+.Home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(Images/8.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 10 7 300;
+}
+.Home .HomeContent{
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 4rem;
+}
+.Home .HomeContent h2{
+    font-size: 5.5rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    line-height: 5rem;
+    color:var(--main-color);
+    text-shadow: var(--box-shadow);
+}
+.Home .HomeContent p{
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    color: #020202;
+}
+.Home .HomeContent .Home-btn{
+    height: 0rem;
+}
+.Home .HomeContent .Home-btn button{
+    font-size: 1.8rem;
+    display: inline-block;
+    padding:.9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color:var(--main-color);
+    background: none;
+    border:var(--border);
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.Home .HomeContent .Home-btn button:hover{
+    font-size: 2rem;
+    border-radius: var(--border-radius-hover);
+    border:var(--border-hover);
+}
+
+
+
+.heading{
+    font-size: 8rem;
+    text-transform: uppercase;
+    color:transparent;
+    -webkit-text-stroke: .05rem var(--main-color);
+    letter-spacing: .2rem;
+    text-align: center;
+    pointer-events: none;
+    position: relative;
+    font-weight: bolder;
+    
+}
+
+.heading span{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color:var(--main-color);
+    font-size: 4rem;
+}
+.About .About-row .box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+}
+.About .About-row .box .images{
+    flex: 0 0 20rem;
+}
+.About .About-row .box .images img{
+    width: 90%;
+    animation:aboutImages 4s linear infinite;
+}
+
+@keyframes aboutImages {
+    0%, 100%{
+        transform: scale(.9);
+        border-radius: var(--border-radius-hover);
+    }
+    50%{
+        transform: scale(.8);
+        border-radius: var(--border-radius);
+    }
+}
+.About .About-row .box .content{
+    flex: 1 1 4rem;
+}
+.About .About-row .box .content h3{
+    color:var(--main-color);
+    font-size: 3rem;
+    line-height: 2.5;
+}
+.About .About-row .box .content p{
+    color:var(--main-color);
+    font-size: 1.9rem;
+    line-height: 1.2;
+    padding:1rem 0;
+}
+.About .About-row .box .content .icons-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    padding-top: 2rem;
+}
+.About .About-row .box .content .icons-container .icons{
+    flex:1 1 15rem;
+    padding:1.5rem;
+    text-align: center;
+    border:var(--border);
+    border-radius: var(--border-radius);
+}
+.About .About-row .box .content .icons-container .icons:hover{
+    border-radius: var(--border-radius-hover);
+    border:var(--border-hover);
+}
+.About .About-row .box .content .icons-container .icons img{
+    height: 4rem;
+}
+.About .About-row .box .content .icons-container .icons h3{
+    font-size: 1.6rem;
+    padding-top: 1.6rem;
+    color:var(--main-color);
+}
+.Product{
+    background: url(Images/back.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.Product .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.Product .box-container .box{
+    flex: 1 1 30rem;
+    text-align: center;
+    padding: 2rem;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    border-radius: .5rem;
+    overflow: hidden;
+    position: relative;
+}
+.Product .box-container .box img{
+    height: 20rem;
+}
+.Product .box-container .box .discount{
+    position: absolute;
+    top: 1rem; left: 1rem;
+    background: #97b89f;
+    color: (var(--main-color));
+    padding: .7rem 1rem;
+    font-size: 2rem;
+}
+.Product .box-container .box .icons{
+    position: absolute;
+    top: .5rem; right: 1rem;
+}
+
+.Product .box-container .box .icons a{
+    display: block;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.7rem;
+    color: var(--black);
+    background: rgba(0, 0, 0, .05);
+    border-radius: 50%;
+    margin-top: .7rem;
+}
+.Product .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color: #fff;
+}
+.Product .box-container .box h3{
+    color: var(--black);
+    font-size: 2.5rem;
+}
+.Product .box-container .box .stars i{
+    padding: 1rem .1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.Product .box-container .box .price{
+    font-size: 2rem;
+    color: #333;
+    padding: .5rem 0;
+}
+.Product .box-container .box .price span{
+    font-size: 1.5rem;
+    color: #383434;
+    text-decoration: line-through;
+}
+.Product .box-container .box .quantity{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}
+.Product .box-container .box .quantity span{
+    padding: 0 .7rem;
+    font-size: 1.7rem;
+}
+.Product .box-container .box .quantity input{
+    border: .1rem solid rgba(0, 0, 0, .3);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--black);
+    padding: .5rem;
+    background: rgba(0, 0, 0, .05);
+}
+.newsletter{
+    background: url(Images/ab.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 3rem 40rem;
+    top: 2rem;
+}
+.newsletter form{
+    max-width: 50rem;
+    text-align: center;
+    padding: 5rem 0;
+}
+.newsletter form h3{
+    font-size: 3rem;
+    color: var(--black);
+    padding-bottom: .7rem;
+}
+.newsletter form .box{
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem 1.5rem;
+    color: var(--black);
+    border-radius: .5rem;
+}
+.newsletter form .box2{
+    width: 30%;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding:.3rem .3rem;
+    border-radius: var(--border-radius);
+    color:var(--main-color);
+    background: var(--white);
+    border:var(--border);
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.newsletter form .box2:hover{
+    font-size: 2rem;
+    border-radius: var(--border-radius-hover);
+    border:var(--border-hover);
+}
+.Review .Review-slider{
+    padding:4rem 0;
+}
+
+.Review .Review-slider .box{
+    border:var(--border);
+    border-radius: var(--border-radius);
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    padding:2rem;
+}
+
+.Review .Review-slider .box .fa-quote-left{
+    position: absolute;
+    top:2rem; left: 2.5rem;
+    font-size: 6rem;
+    color:#ccc;
+    z-index: -1;
+}
+
+.Review .Review-slider .box .fa-quote-right{
+    position: absolute;
+    bottom:2rem; right: 2.5rem;
+    font-size: 6rem;
+    color:#ccc;
+    z-index: -1;
+}
+
+.Review .Review-slider .box:hover .fa-quote-left{
+    top:-6.5rem;
+}
+
+.Review .Review-slider .box:hover .fa-quote-right{
+    bottom:-6.5rem;
+}
+
+.Review .Review-slider .box img{
+    height:7rem;
+    width:7rem;
+    border-radius: 50%;
+    margin-bottom: .7rem;
+}
+.Review .Review-slider .box .stars{
+    padding:.5rem 0;
+}
+.Review .Review-slider .box .stars i{
+    font-size: 1.7rem;
+    color:var(--main-color);
+}
+.Review .Review-slider .box p{
+    font-size: 1.6rem;
+    color:var(--main-color);
+    padding:1rem 0;
+    line-height: 1.8;
+}
+.Review .Review-slider .box h3{
+    font-size: 2.2rem;
+    color:var(--main-color);
+    line-height: 1.8;
+}
+.Review .Review-slider .box span{
+    font-size: 1.5rem;
+    color:var(--main-color);
+}
+.Contact{
+    background:url(Images/v.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 2rem;
+}
+.Contact form{
+    margin:0 auto 2rem auto;
+    max-width: 40rem;
+    border-radius: var(--border-radius-hover);
+    padding:3rem;
+    border:var(--border);
+}
+.Contact form .box{
+    width:100%;
+    padding:1rem 1rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background:none;
+    text-transform: none;
+    color:var(--main-color);
+    border:var(--border);
+    margin:.7rem 0;
+}
+.Contact form .box:focus{
+    border:var(--border-hover);
+}
+.Contact form textarea{
+    height:15rem;
+    resize: none;
+}
+.faq-heading{
+    border-bottom: var(--main-color);
+    padding: 20px 400px;
+    font-size: 2.8rem;
+    color: var(--main-color);
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+background: url(Images/d.jpg) no-repeat;
+background-size: cover;
+background-position: center;
+padding: 3.5rem 5rem;
+
+}
+.hr-line{
+  width: 60%;
+  margin: auto;
+  
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    background-color: #d2d1d16b; 
+    color: var(--main-color);
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+    font-size: 2rem;
+}
+.faq-body{
+    margin: auto;
+    /* text-align: center; */
+   width: 50%; 
+   padding: 20px 30px;
+   font-size: 1.5rem; 
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+    background-color: #F9F9F9;
+}
+
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+.faq-page:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: var(--main-color);
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+.footer{
+    background:#ebdfd5;
+    background-position: center;
+    background-size: cover;
+    padding: 2rem;
+}
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+}
+
+.footer .box-container  h1 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+.footer .box-container p{
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color: var(--main-color);
+    padding: 1rem 0;
+}
+.footer .box-container .box a{
+    display: block;
+    font-size: 2rem;
+    color: var(--main-color);
+    padding: 1rem 0;
+}
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color: var(--main-color);
+}
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+.footer .share{
+    padding: 1rem 0;
+    text-align: center;
+}
+.footer .share a{
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    color: var(--white);
+    background: var(--main-color);
+    margin: 0 .3rem;
+    border-radius: 50%;
+}
+.footer .share a:hover{
+    background: var(--white);
+    color: var(--main-color);
+}
+.footer .credit{
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    color: var(--main-color);
+    text-align: center;
+}    
+
+
+.swiper-pagination-bullet{
+    background-color: var(--black);
+}
+
+
+/* media queries for web responsive */
+
+@media (max-width:991px) {
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.3rem 3rem;
+    }
+    .home .homeContent{
+        margin-left: 0;
+        width: 80%;
+    }
+}
+@media (max-width:768px) {
+    #menu-bar{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 25rem;
+        background-color: var(--white);
+        height: 80vh;
+    }
+    .header .navbar.active{
+        right: 0;
+    }
+    .header .navbar a{
+        display: block;
+        font-size: 2rem;
+        color: black;
+        margin: 1.5rem;
+    }
+    .home .homeContent{
+        margin-left: 0;
+        width: 90%;
+    }
+}
+@media (max-width:600px){
+    html{
+        font-size: 50%;
+    }
+}
